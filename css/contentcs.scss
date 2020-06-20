@@ -1,0 +1,294 @@
+@mixin flstyle($style){
+    float: $style;
+}
+@mixin hoverscolor(){
+    color: #00b38a;
+}
+$maincolor:#00b38a;
+$container:1203px;
+@mixin dispstyle($disp){
+    display: $disp;
+}
+@mixin posistyle($posi){
+    position: $posi;
+}
+.content{
+    height: 2000px;
+    .content_Top{
+        height: 118px;
+        // background-color: yellow;
+        margin-top: 50px;
+    }
+    .content_Link{
+        @extend .content_Top;
+        margin-top: 80px;
+    }
+}
+.content_Top{
+    .top_link{
+        height: 58px;
+        border-bottom:1px solid #e8e8e8;
+        line-height: 58px;
+        a{
+            margin-right: 60px;
+            color: #999999;
+        }
+        .active{
+            border-bottom: 2px solid #333333;
+            padding-bottom: 19px;
+        }
+    }
+    .top_Text{
+        height: 60px;
+        color: #999999;
+        .ask{
+            background-color: #e6e6e6;
+            color: white;
+            @include dispstyle(inline-block);
+            width: 18px;
+            height: 18px;
+            margin-top: 21px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        a{
+            @include hoverscolor();
+            margin-left: 20px;
+        }
+    }
+}
+#more_Btn1{
+    width: 390px;
+    height: 40px;
+    @include posistyle(absolute);
+    left: 407px;
+    background-color: white;
+    border: 1px solid $maincolor;
+    cursor: pointer;
+    &:hover{
+        background-color: $maincolor;
+    }
+}
+.content_Company{
+    
+    .company_Ul{
+    @include dispstyle(flex);
+    height: 700px;
+    width: $container;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    li{
+        @include flstyle(left);
+        width: 390px;
+        height: 222px;
+        // background-color: green;
+        // margin: 0 14px 0 0;
+        padding: 20px 18px 0 18px;
+        border: 1px solid #EAEEED;
+        box-sizing: border-box;
+    }
+}
+}
+.company_Ul{
+    li{
+        .employ_Position{
+            @include posistyle(relative);
+            white-space: nowrap;/*强制文字不换行*/
+            font-size: 16px;
+            height: 116px;
+            border-bottom: 1px dashed #e0e0e0;
+            h2{
+                @include flstyle(left);
+                a{
+                    color: black;
+                }
+                max-width: 145px;
+                overflow: hidden;   /*超过最大长度的内容隐藏*/
+                text-overflow:ellipsis;/*文字超过最大长度用...省略*/
+            }
+           .create_time{
+                color: #999999;
+                line-height: 22px;
+                @include flstyle(left);
+            }
+            .chat_me{
+                @include flstyle(left);
+                background-image: url('../images/zhaowo.png');
+                width: 16px;
+                height: 16px;
+                cursor: pointer;
+                margin: 3px 0 0 2px;
+            }
+            .salary{
+                font-size: 16px;
+                color: #fa6041;
+                @include flstyle(right);
+            }
+            .require{
+                @include posistyle(absolute);
+                top: 30px;
+                .know{
+                    display: block;
+                    width: 61px;
+                    height: 26px;
+                    padding: 0 5px;
+                    font-size: 12px;
+                    border: 1px solid #F0F0F0;
+                    text-align: center;
+                    line-height: 26px;
+                    border-radius: 3px;
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+    .employ_Company{
+        margin-top:20px ;
+        height: 40px;
+        @include posistyle(relative);
+        .company_icon{
+            width: 40px;
+            height: 40px;
+            @include posistyle(absolute);
+            img{
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .company_info{
+            margin: 0px 0 0 50px;
+            h3{
+                a{
+                    color: #555555;
+                    &:hover{
+                        @include hoverscolor();
+                    }
+                }
+            }
+            span{
+                color: #777777;
+            }
+        }
+    }
+}
+.content_Link{
+    .link_link{
+        @extend .top_link;
+    }
+    .link_Text{
+        @extend .top_Text;
+    }
+    .other_Link{
+        height: 198px;
+        width: $container;
+        margin-top: 80px;
+        dl{
+            
+            dt{ @extend .top_link;}
+            dd{
+                a{
+                    font-size: 13px;
+                    @include dispstyle(inline-block);
+                    color: #555555;
+                    margin: 10px 8px 0 0;
+                    &:hover{
+                        @include hoverscolor();
+                        text-decoration: underline;
+                    }
+                }
+                &:first-of-type{
+                    margin-top: 15px;
+                }    
+            }
+            
+         }
+        
+    }
+    .link_Ul{
+        height: 600px;
+        @include dispstyle(flex);
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &>li{
+            @include flstyle(left);
+            width: 290px;
+            height: 280px;
+            border: 1px solid #eeeeee;
+            padding: 20px 10px 0 10px;
+            box-sizing: border-box;
+            .company_Info{
+                height: 200px;
+                width: 268px;
+                border-bottom: 1px dashed #999999;
+                a{
+                    @include posistyle(relative);
+                    @include dispstyle(block);
+                    margin-bottom: 10px;
+                    &:first-of-type{
+                        left: 100px;
+                        height: 80px;
+                        width: 80px;
+                        img{
+                            height: 80px;
+                            width: 80px;
+                        }
+                    }
+                    &:last-of-type{
+                        left: 110px;
+                        height: 18px;
+                        width: 65px;
+                        color: #333;
+                        // font-size: 18px;
+                    }
+                }
+                .company_Type{
+                    color: #999999;
+                    font-size: 14px;
+                }
+                span{
+                    @include dispstyle(block);
+                    @include posistyle(relative);
+                    margin-bottom: 10px;
+                    text-align: center;
+                    font-size: 14px;
+                }
+            }
+            .employ_Evaluate{
+                ul li{
+                    @include dispstyle(inline-block);
+                    font-size: 12px;
+                    width: 86px;
+                    height: 35px;
+                    span{
+                        @include dispstyle(block);
+                        text-align: center;
+                        cursor: pointer;
+                        &:first-of-type{
+                            @include hoverscolor();
+                            margin-top: 13px;
+                        }
+                        &:last-of-type{
+                            color: #999999;;
+                        }
+                        &:hover{
+                            @include hoverscolor();
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+#more_Btn2{
+    @extend #more_Btn1;
+}
+#display_Btn{
+    @include posistyle(absolute);
+    margin-top: -99px;
+    right: 0;
+    font-size: 13px;
+    color: #999999;
+    cursor: pointer;
+}

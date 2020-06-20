@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="105px" height="43px" viewBox="0 0 105 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>气泡-账号密码登录</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M89,14.5961742 C89.4341841,15.1002845 90.3987252,15.6498949 91.8936233,16.2450053 L91.8936027,16.245057 C92.3040702,16.4084618 92.5043541,16.8736771 92.3409493,17.2841446 C92.2588583,17.4903546 92.0947837,17.6531894 91.8879569,17.733714 C90.3962875,18.3144707 89.4336352,18.8633554 89,19.3803682 L89,26 C89,27.1045695 88.1045695,28 87,28 L7,28 C5.8954305,28 5,27.1045695 5,26 L5,8 C5,6.8954305 5.8954305,6 7,6 L87,6 C88.1045695,6 89,6.8954305 89,8 L89,14.5961742 Z" id="path-1"></path>
+        <filter x="-9.7%" y="-29.5%" width="119.3%" height="177.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="设计" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Pc-登录" transform="translate(-760.000000, -64.000000)">
+            <g id="气泡-账号密码登录" transform="translate(760.000000, 64.000000)">
+                <g id="Combined-Shape" transform="translate(48.999129, 17.000000) scale(-1, 1) translate(-48.999129, -17.000000) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <path stroke-opacity="0.2" stroke="#B5B5B5" stroke-width="1" d="M88.6211487,14.9224742 L88.5,14.7818143 L88.5,8 C88.5,7.17157288 87.8284271,6.5 87,6.5 L7,6.5 C6.17157288,6.5 5.5,7.17157288 5.5,8 L5.5,26 C5.5,26.8284271 6.17157288,27.5 7,27.5 L87,27.5 C87.8284271,27.5 88.5,26.8284271 88.5,26 L88.5,19.1984442 L88.6169084,19.0590571 C89.1193883,18.4599624 90.1418637,17.8769677 91.7065539,17.2677816 C91.784105,17.2375884 91.8456258,17.1765325 91.8764064,17.0992126 C91.9376787,16.9452984 91.8625716,16.7708296 91.7086914,16.7095483 C90.1437273,16.086545 89.1226096,15.5046964 88.6211487,14.9224742 Z"></path>
+                </g>
+                <text id="账号密码登录" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#B5B5B5">
+                    <tspan x="16" y="21">账号密码登录</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

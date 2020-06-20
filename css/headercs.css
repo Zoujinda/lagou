@@ -1,0 +1,204 @@
+.header {
+  height: 160px;
+}
+
+.header .header_nar {
+  background-color: #32373e;
+  height: 40px;
+  line-height: 40px;
+}
+
+.header .header_nar a:hover {
+  color: white;
+}
+
+.header .header_description {
+  background-color: #00b38a;
+  height: 120px;
+}
+
+.nar_left {
+  width: 650px;
+}
+
+.nar_left a {
+  float: left;
+  color: #00b38a;
+  font-size: 14px;
+}
+
+.nar_left .lagou {
+  font-size: 22px;
+  color: #00b38a;
+  display: block;
+  margin-right: 33px;
+}
+
+.nar_left .lagou:hover {
+  color: #00b38a;
+}
+
+.nar_left .quanguo {
+  pointer-events: none;
+}
+
+.nar_left :nth-child(3) {
+  color: #afb5c0;
+  font-size: 12px;
+  display: block;
+  margin-left: 12px;
+  margin-right: 35px;
+}
+
+.nar_left .nar_leftul a {
+  float: left;
+  width: 70px;
+  display: block;
+  color: #afb5c0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.nar_left .nar_leftul .active {
+  background-color: #24282c;
+  color: white;
+}
+
+.nar_right a {
+  color: #afb5c0;
+  font-size: 12px;
+  float: left;
+}
+
+.nar_right .nar_right_left {
+  width: 140px;
+}
+
+.nar_right .nar_right_left :first-child {
+  display: block;
+  margin-right: 24px;
+}
+
+.nar_right .nar_right_center {
+  width: 100px;
+}
+
+.nar_right .nar_right_center i {
+  font-size: 12px;
+}
+
+.nar_right .nar_right_center span {
+  display: block;
+  float: left;
+  color: #afb5c0;
+  margin-left: 8px;
+  margin-right: 7px;
+  font-size: 12px;
+}
+
+.nar_right .nar_right_right .icon-shouji {
+  font-size: 14px;
+}
+
+.nar_right .nar_right_right :nth-child(1) {
+  color: #00b38a;
+  display: block;
+  margin-right: 20px;
+  position: relative;
+  top: -2px;
+}
+
+.nar_right .nar_right_right :nth-child(1):hover {
+  color: #12ddae;
+}
+
+.header_description .description_left {
+  width: 572px;
+  height: 120px;
+  position: relative;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-size: 230px 100%;
+}
+
+.header_description .description_left .imgbox {
+  position: absolute;
+  top: 37px;
+  left: 239px;
+  width: 331px;
+  height: 34px;
+  background-image: url("../img/header_text.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.header_description .description_left .textbox {
+  position: absolute;
+  top: 75px;
+  left: 241px;
+  color: white;
+}
+
+.header_description .description_right {
+  width: 487px;
+  height: 120px;
+  margin-top: -2px;
+}
+
+.header_description .description_right .right_login {
+  height: 35px;
+  position: absolute;
+  top: 42px;
+  width: 487px;
+}
+
+.header_description .description_right .right_login p {
+  font-size: 12px;
+  height: 35px;
+  line-height: 35px;
+  margin-right: 10px;
+  background-color: white;
+}
+
+.header_description .description_right .right_login p a {
+  color: #e3d6cc;
+}
+
+.header_description .description_right .right_login p input {
+  border: 0;
+  outline: medium;
+}
+
+.header_description .description_right .right_login .iphone a {
+  font-size: 14px;
+}
+
+.header_description .description_right .right_login .number input {
+  padding-left: 10px;
+  width: 84px;
+}
+
+.header_description .description_right .right_login .number a {
+  color: #00b38a;
+  display: inline-block;
+  font-size: 14px;
+  padding-right: 10px;
+}
+
+.header_description .description_right .right_login .loginbtn {
+  position: absolute;
+  top: 7px;
+  background-color: #00b38a;
+  border: 1px solid white;
+  color: #ccf0e8;
+  font-size: 14px;
+  width: 107px;
+  height: 35px;
+  margin-top: -7px;
+}
+
+.header_description .description_right .right_login .loginbtn:hover {
+  background-color: #33c2a1;
+  cursor: pointer;
+}
+/*# sourceMappingURL=headercs.css.map */

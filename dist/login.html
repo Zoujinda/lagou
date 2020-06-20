@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <!-- 网址关键词 -->
+  <meta name="keywords" content="招聘,找工作,求职,招聘网站,互联网招聘">
+  <!-- 网址描述 -->
+  <meta name="description" content="拉勾招聘是专业的互联网求职招聘网站，致力于提供真实可靠的互联网岗位求职招聘工作信息，拥有海量的互联网人才储备，互联网行业找工作就上拉勾招聘，值得信赖的求职招聘网站">
+  <!-- name为renderer是告诉浏览器默认以哪种浏览器内核浏览当前网站 -->
+  <meta name="renderer" content="webkit">
+  <!-- 百度认证你个人网站，content是登录百度站长工具后台认证站点得到的代码 -->
+  <meta name="baidu-site-verification" content="QIQ6KC1oZ6">
+  <!-- 让网站加入QQ登录接口,可以让用户用qq账号登录，content是向腾讯申请接口拿到的代码 -->
+  <meta property="qc:admins" content="23635710066417756375">
+  <title>互联网求职招聘找工作-上拉勾招聘-专业的互联网求职招聘网站</title>
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" ype="text/css" href="css/login.css">
+  <link rel="stylesheet" ype="text/css" href="css/iconfont.css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="moblieBox">
+    <section class="boxTop">
+      <a href="#" class="rf">注册</a>
+      <h2>登录拉勾</h2>
+    </section>
+    <div class="username">
+      <input type="text" placeholder="请输入已验证的手机号或邮箱">
+    </div>
+    <div class="password">
+      <input type="text" placeholder="请输入密码">
+    </div>
+    <button class="loginBtn">登录</button>
+    <a href="#" class="mobileLogin">手机号登录</a>
+  </div>
+  <div class="pcBox">
+    <div class="topBox container-fluid"></div>
+    <div class="loginBox">
+      <section class="imgBox">
+        <a href="index.html"><img src="images/LAGOU.png" alt="LAGOU.COM"></a>
+      </section>
+      <div class="aboutLogin">
+        <div class="qrcode">
+          <!-- a标签的href属性加上#可以阻止默认事件 -->
+          <a href="#" class="qrcodeA lf"></a>
+          <a href="#" class="wechatA lf"></a>
+        </div>
+        <section class="loginInfo">
+          <div class="leftText lf">
+            <!-- 将ul换为form表单来做ul这一部分更好 -->
+            <ul>
+              <li class="borderBottom clear">
+                <a href="#" class="active lf">密码登录</a>
+                <a href="#" class="lf">验证码登录</a>
+              </li>
+              <li class="borderBottom">
+                <input type="text" name="username" onblur="userOnblur()" onfocus="userOnfocus()" placeholder="请输入常用手机号/邮箱">
+                <div class="usernull"><span class="exclamation">!</span><span>请输入已验证手机/邮箱</span></div>
+              </li>
+              <li class="borderBottom">
+                <input type="password" name="password" onblur="passOnblur()" onfocus="passOnfocus()" placeholder="请输入密码">
+                <div class="passnull"><span class="exclamation">!</span><span>请输入密码</span></div>
+              </li>
+              <li class="clear">
+                <a href="#" class="rf">忘记密码?</a>
+              </li>
+              <li>
+                <button>登&nbsp;录</button>
+              </li>
+            </ul>
+            <span class="textOr">or</span>
+          </div>
+          <div class="leftQrcode lf">
+            <div class="qrcodeBox"></div>
+            <span>微信扫一扫，快速登录</span>
+            <span class="codeOr">or</span>
+          </div>
+          <section class="rightBox rf">
+            <div class="register">
+              <h5>还没有账号：</h5>
+              <a href="#">立即注册</a>
+            </div>
+            <div class="loginWay">
+              <h5>使用以下账号直接登录:</h5>
+              <a href="#" class="iconfont icon-weibo"></a>
+              <a href="#" class="iconfont icon-wechat"></a>
+              <a href="#" class="iconfont icon-QQ"></a>
+              <a href="#" class="iconfont icon-baidu1"></a>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+    <div class="bottomBox"></div>
+  </div>
+  <script>
+    window.onload = function () {
+      var getA = document.getElementsByTagName("a");
+      var getCode = document.getElementsByClassName("leftQrcode");
+      var getText = document.getElementsByClassName("leftText");
+      var waySwitch = true;
+      console.log(getA);
+      getA[3].onclick = function () {
+        getA[3].classList.add("codeact");
+        getA[4].classList.add("wxact");
+      }
+      getA[4].onclick = function () {
+        getA[4].classList.add("wxact");
+        getA[3].classList.add("codeact");
+      }
+      getA[1].onclick = function (ev) {
+        // ev.preventDefault();
+        if (waySwitch) {
+          getA[1].classList.add("codeact");
+          getA[2].classList.add("wxact");
+          getCode[0].style.display = "block";
+          getText[0].style.display = "none";
+          waySwitch = !waySwitch;
+        } else {
+          getA[1].classList.remove("codeact");
+          getA[2].classList.remove("wxact");
+          getCode[0].style.display = "none";
+          getText[0].style.display = "block";
+          waySwitch = !waySwitch;
+        }
+        return false;
+      }
+    }
+  </script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

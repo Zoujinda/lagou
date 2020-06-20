@@ -1,0 +1,33 @@
+{
+  "name": "lagou",
+  "version": "1.0.0",
+  "description": "拉钩网项目实战",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Zoujinda/lagou.git"
+  },
+  "author": "zjd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zoujinda/lagou/issues"
+  },
+  "homepage": "https://github.com/Zoujinda/lagou#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8"
+  }
+}

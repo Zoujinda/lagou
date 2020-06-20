@@ -1,0 +1,168 @@
+$maincolor:#00b38a;
+.header{
+    height: 160px;
+    .header_nar{
+        background-color: #32373e;
+        height: 40px;
+        line-height: 40px;
+        a:hover{
+                color: white;
+        }
+    }
+    .header_description{
+        background-color: $maincolor;
+        height: 120px;
+    }
+}
+.nar_left{
+    width: 650px;
+    a{
+        float: left;
+        color: $maincolor;
+        font-size: 14px;
+    }
+    .lagou{
+        font-size: 22px;
+        color: $maincolor;
+        display: block;
+        margin-right: 33px;
+        &:hover{
+            color:$maincolor;
+        }
+    }
+    .quanguo{
+        pointer-events: none;
+    }
+    :nth-child(3){
+        color: #afb5c0;
+        font-size: 12px;
+        display: block;
+        margin-left: 12px;
+        margin-right: 35px;
+    }
+    .nar_leftul{
+            a{
+                float: left;
+                width: 70px;
+                display: block;
+                color: #afb5c0;
+                font-size: 12px;
+                text-align: center;
+            }
+            .active{
+                background-color: #24282c;
+                color: white;
+            }
+        }
+}
+.nar_right{
+    a{
+        color: #afb5c0;
+        font-size: 12px;
+        float: left;
+    }
+    .nar_right_left{
+        width: 140px;
+        :first-child{
+            display: block;
+            margin-right: 24px;
+        }
+    }
+    .nar_right_center{
+        width: 100px;
+        i{font-size: 12px;}
+        span{display: block; float: left;color: #afb5c0;margin-left: 8px;margin-right: 7px;font-size: 12px;}
+    }
+    .nar_right_right{
+        .icon-shouji{
+            font-size: 14px;
+        }
+        :nth-child(1){
+            color: $maincolor;
+            display: block;
+            margin-right: 20px;
+            position: relative;
+            top: -2px;
+            
+            &:hover{color: #12ddae;}
+        }
+    }
+}
+.header_description{
+    .description_left{
+        // background-color: yellow;
+        width: 572px;
+        height:120px;
+        position: relative;
+        background-image: url("../images/logo.png");
+        background-repeat: no-repeat;
+        background-size: 230px 100%;
+        .imgbox{
+            position: absolute;
+            top: 37px;
+            left: 239px;
+            width: 331px;
+            height: 34px;
+            background-image: url("../images/header_text.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .textbox{
+            position: absolute;
+            top: 75px;
+            left: 241px;
+            color: white;
+        }
+    }
+    .description_right{
+        width: 487px;
+        height: 120px;
+        margin-top: -2px;
+        .right_login{
+            height: 35px;
+            position: absolute;
+            top: 42px;
+            width: 487px;
+            p{
+                font-size: 12px;
+                height: 35px;
+                line-height: 35px;
+                margin-right: 10px;
+                background-color: white;
+                a{ color: #e3d6cc;}
+                input{border:0;outline:medium;}
+             }
+            .iphone{
+                a{font-size: 14px;}
+            }
+           .number{
+               input{
+                padding-left: 10px;
+                width: 84px;
+               }
+               a{ 
+                   color: $maincolor;
+                   display: inline-block;
+                   font-size: 14px;
+                   padding-right: 10px;
+                }
+            }
+            .loginbtn{position: absolute;
+                top: 7px;
+                background-color: $maincolor;
+                border: 1px solid white;
+                color: #ccf0e8;
+                font-size: 14px;
+                width: 107px;
+                height: 35px;
+                margin-top: -7px;
+                &:hover{
+                    background-color: #33c2a1;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+

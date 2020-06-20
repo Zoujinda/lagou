@@ -1,0 +1,166 @@
+@mixin flstyle($style){
+    float: $style;
+}
+@mixin hoverscolor($col:#00b38a){
+    color: $col;
+}
+$maincolor:#00b38a;
+$container:1203px;
+
+@mixin dispstyle($disp){
+    display: $disp;
+}
+@mixin posistyle($posi){
+    position: $posi;
+}
+@mixin defpad($pad:padding,$padpx:10px){
+    @if($pad==left){
+        padding-left:$padpx;
+    }
+    @else if($pad==top){
+        padding-top:$padpx;
+    }
+    @else if($pad==bottom){
+        padding-bottom:$padpx;
+    }
+    @else if($pad==right){
+        padding-right:$padpx;
+    }
+    @else{
+        padding: $padpx;
+    }
+}
+@mixin defmar($mar:margin,$marpx:10px){
+    @if($mar==left){
+        margin-left:$marpx;
+    }
+    @else if($mar==top){
+        margin-top:$marpx;
+    }
+    @else if($mar==bottom){
+        margin-bottom:$marpx;
+    }
+    @else if($mar==right){
+        margin-right:$marpx;
+    }
+    @else{
+        margin: $marpx;
+    }
+}
+.footer{
+    border-top: 1px solid #ebebeb;
+    height: 352px;
+    .footer_Help{
+        height: 227px;
+        .help_Left{
+            @include defmar(top,45px);
+            height: 134px;
+            width: 300px;
+            border-right: 1px solid #555;
+           .a_Btn{
+                width: 182px;
+                height: 42px;
+                margin-bottom: 16px;
+                a{
+                    @include dispstyle(block);
+                    width: 100%;
+                    height: 100%;
+                    border: 1px solid $maincolor;
+                    color:$maincolor;
+                    text-align: center;
+                    padding-top: 10px;
+                    box-sizing: border-box;
+                    font-size: 14px;
+                    &:hover{
+                        background-color: $maincolor;
+                        color: white;
+                    }
+                    .iconfont{margin-right: 8px;}
+                }
+            }
+            div a{
+                color: #555;
+                font-size: 14px;
+                @include dispstyle(inline-block);
+                &:first-of-type{
+                    margin-right: 33px;
+                }
+                &:hover{
+                    @include hoverscolor();
+                }
+            }
+        }
+        dl{
+            dt{
+                font-size: 16px;
+                a{
+                    color: #55557b;
+                    pointer-events: none;/*使得a链接无法点击*/
+                }
+            }
+            dd{
+                @include defmar(top,16px);
+                &:first-of-type{
+                    @include defmar(top,30px);
+                }
+            }
+            dd a{
+                color: #555555;
+                font-size: 12px;
+                &:hover{
+                    @include hoverscolor();
+                }
+            }
+
+            @include defpad(top,45px);
+            &:first-of-type{
+                @include defmar($marpx:0 164px 0 117px);
+            }
+            &:nth-of-type(2){
+                @include defmar(right,164px);
+            }
+        }
+    }
+    .footer_Report{
+        height: 90px;
+        background-color: #fafafa;
+        span{
+            @include defmar(margin,44px 18px 0 0);
+            color: #999999;
+            font-size: 13px;
+        }
+        a{
+            @extend span;
+            i{
+                width: 14px;
+                height: 14px;
+                background: url('../images/sprite.png') no-repeat -151px -184px;
+                @include defmar(right,6px )
+            }
+            &:hover{
+                @include hoverscolor(#555);
+            }
+        }
+        .contactInfo{
+            border: 1px solid #d5dadf;
+            @include defmar(top,24px );
+            font-size: 12px;
+            width: 176px;
+            height: 60px;
+            color: #999999;
+            i{
+                width: 20px;
+                height: 24px;
+                background: url('../images/sprite.png') no-repeat -132px -20px;
+                @include defmar(margin,14px 9px 0 14px );;
+            }
+            div{
+                @include defmar(top,8px );
+                font-size: 10px;
+            }
+        }
+        img{
+            @include defmar(top,40px );
+        }
+    }
+}

@@ -1,0 +1,208 @@
+@charset "UTF-8";
+.content {
+  height: 2000px; }
+  .content .content_Top, .content .content_Link {
+    height: 118px;
+    margin-top: 50px; }
+  .content .content_Link {
+    margin-top: 80px; }
+
+.content_Top .top_link, .content .content_Link .top_link, .content_Top .content_Link .link_link, .content_Link .content_Top .link_link, .content .content_Link .link_link, .content_Top .content_Link .other_Link dl dt, .content_Link .other_Link dl .content_Top dt, .content .content_Link .other_Link dl dt {
+  height: 58px;
+  border-bottom: 1px solid #e8e8e8;
+  line-height: 58px; }
+  .content_Top .top_link a, .content .content_Link .top_link a, .content_Top .content_Link .link_link a, .content_Link .content_Top .link_link a, .content .content_Link .link_link a, .content_Top .content_Link .other_Link dl dt a, .content_Link .other_Link dl .content_Top dt a, .content .content_Link .other_Link dl dt a {
+    margin-right: 60px;
+    color: #999999; }
+  .content_Top .top_link .active, .content .content_Link .top_link .active, .content_Top .content_Link .link_link .active, .content_Link .content_Top .link_link .active, .content .content_Link .link_link .active, .content_Top .content_Link .other_Link dl dt .active, .content_Link .other_Link dl .content_Top dt .active, .content .content_Link .other_Link dl dt .active {
+    border-bottom: 2px solid #333333;
+    padding-bottom: 19px; }
+
+.content_Top .top_Text, .content .content_Link .top_Text, .content_Top .content_Link .link_Text, .content_Link .content_Top .link_Text, .content .content_Link .link_Text {
+  height: 60px;
+  color: #999999; }
+  .content_Top .top_Text .ask, .content .content_Link .top_Text .ask, .content_Top .content_Link .link_Text .ask, .content_Link .content_Top .link_Text .ask, .content .content_Link .link_Text .ask {
+    background-color: #e6e6e6;
+    color: white;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-top: 21px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 20px; }
+  .content_Top .top_Text a, .content .content_Link .top_Text a, .content_Top .content_Link .link_Text a, .content_Link .content_Top .link_Text a, .content .content_Link .link_Text a {
+    color: #00b38a;
+    margin-left: 20px; }
+
+#more_Btn1, #more_Btn2 {
+  width: 390px;
+  height: 40px;
+  position: absolute;
+  left: 407px;
+  background-color: white;
+  border: 1px solid #00b38a;
+  cursor: pointer; }
+  #more_Btn1:hover, #more_Btn2:hover {
+    background-color: #00b38a; }
+
+.content_Company .company_Ul {
+  display: flex;
+  height: 700px;
+  width: 1203px;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  .content_Company .company_Ul li {
+    float: left;
+    width: 390px;
+    height: 222px;
+    padding: 20px 18px 0 18px;
+    border: 1px solid #EAEEED;
+    box-sizing: border-box; }
+
+.company_Ul li .employ_Position {
+  position: relative;
+  white-space: nowrap;
+  /*强制文字不换行*/
+  font-size: 16px;
+  height: 116px;
+  border-bottom: 1px dashed #e0e0e0; }
+  .company_Ul li .employ_Position h2 {
+    float: left;
+    max-width: 145px;
+    overflow: hidden;
+    /*超过最大长度的内容隐藏*/
+    text-overflow: ellipsis;
+    /*文字超过最大长度用...省略*/ }
+    .company_Ul li .employ_Position h2 a {
+      color: black; }
+  .company_Ul li .employ_Position .create_time {
+    color: #999999;
+    line-height: 22px;
+    float: left; }
+  .company_Ul li .employ_Position .chat_me {
+    float: left;
+    background-image: url("../images/zhaowo.png");
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin: 3px 0 0 2px; }
+  .company_Ul li .employ_Position .salary {
+    font-size: 16px;
+    color: #fa6041;
+    float: right; }
+  .company_Ul li .employ_Position .require {
+    position: absolute;
+    top: 30px; }
+    .company_Ul li .employ_Position .require .know {
+      display: block;
+      width: 61px;
+      height: 26px;
+      padding: 0 5px;
+      font-size: 12px;
+      border: 1px solid #F0F0F0;
+      text-align: center;
+      line-height: 26px;
+      border-radius: 3px;
+      margin-top: 8px; }
+
+.company_Ul .employ_Company {
+  margin-top: 20px;
+  height: 40px;
+  position: relative; }
+  .company_Ul .employ_Company .company_icon {
+    width: 40px;
+    height: 40px;
+    position: absolute; }
+    .company_Ul .employ_Company .company_icon img {
+      width: 40px;
+      height: 40px; }
+  .company_Ul .employ_Company .company_info {
+    margin: 0px 0 0 50px; }
+    .company_Ul .employ_Company .company_info h3 a {
+      color: #555555; }
+      .company_Ul .employ_Company .company_info h3 a:hover {
+        color: #00b38a; }
+    .company_Ul .employ_Company .company_info span {
+      color: #777777; }
+
+.content_Link .other_Link {
+  height: 198px;
+  width: 1203px;
+  margin-top: 80px; }
+  .content_Link .other_Link dl dd a {
+    font-size: 13px;
+    display: inline-block;
+    color: #555555;
+    margin: 10px 8px 0 0; }
+    .content_Link .other_Link dl dd a:hover {
+      color: #00b38a;
+      text-decoration: underline; }
+  .content_Link .other_Link dl dd:first-of-type {
+    margin-top: 15px; }
+
+.content_Link .link_Ul {
+  height: 600px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  .content_Link .link_Ul > li {
+    float: left;
+    width: 290px;
+    height: 280px;
+    border: 1px solid #eeeeee;
+    padding: 20px 10px 0 10px;
+    box-sizing: border-box; }
+    .content_Link .link_Ul > li .company_Info {
+      height: 200px;
+      width: 268px;
+      border-bottom: 1px dashed #999999; }
+      .content_Link .link_Ul > li .company_Info a {
+        position: relative;
+        display: block;
+        margin-bottom: 10px; }
+        .content_Link .link_Ul > li .company_Info a:first-of-type {
+          left: 100px;
+          height: 80px;
+          width: 80px; }
+          .content_Link .link_Ul > li .company_Info a:first-of-type img {
+            height: 80px;
+            width: 80px; }
+        .content_Link .link_Ul > li .company_Info a:last-of-type {
+          left: 110px;
+          height: 18px;
+          width: 65px;
+          color: #333; }
+      .content_Link .link_Ul > li .company_Info .company_Type {
+        color: #999999;
+        font-size: 14px; }
+      .content_Link .link_Ul > li .company_Info span {
+        display: block;
+        position: relative;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 14px; }
+    .content_Link .link_Ul > li .employ_Evaluate ul li {
+      display: inline-block;
+      font-size: 12px;
+      width: 86px;
+      height: 35px; }
+      .content_Link .link_Ul > li .employ_Evaluate ul li span {
+        display: block;
+        text-align: center;
+        cursor: pointer; }
+        .content_Link .link_Ul > li .employ_Evaluate ul li span:first-of-type {
+          color: #00b38a;
+          margin-top: 13px; }
+        .content_Link .link_Ul > li .employ_Evaluate ul li span:last-of-type {
+          color: #999999; }
+        .content_Link .link_Ul > li .employ_Evaluate ul li span:hover {
+          color: #00b38a; }
+
+#display_Btn {
+  position: absolute;
+  margin-top: -99px;
+  right: 0;
+  font-size: 13px;
+  color: #999999;
+  cursor: pointer; }
