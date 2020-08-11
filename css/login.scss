@@ -1,461 +1,547 @@
-@mixin dispstyle($disp){
-    display: $disp;
+@mixin dispstyle($disp) {
+  display: $disp;
 }
-@mixin posistyle($posi){
-    position: $posi;
+
+@mixin posistyle($posi) {
+  position: $posi;
 }
-@mixin defpad($pad:padding,$padpx:10px){
-    @if($pad==left){
-        padding-left:$padpx;
-    }
-    @else if($pad==top){
-        padding-top:$padpx;
-    }
-    @else if($pad==bottom){
-        padding-bottom:$padpx;
-    }
-    @else if($pad==right){
-        padding-right:$padpx;
-    }
-    @else{
-        padding: $padpx;
-    }
+
+@mixin defpad($pad:padding, $padpx:10px) {
+  @if($pad==left) {
+    padding-left: $padpx;
+  }
+
+  @else if($pad==top) {
+    padding-top: $padpx;
+  }
+
+  @else if($pad==bottom) {
+    padding-bottom: $padpx;
+  }
+
+  @else if($pad==right) {
+    padding-right: $padpx;
+  }
+
+  @else {
+    padding: $padpx;
+  }
 }
-@mixin defmar($mar:margin,$marpx:10px){
-    @if($mar==left){
-        margin-left:$marpx;
-    }
-    @else if($mar==top){
-        margin-top:$marpx;
-    }
-    @else if($mar==bottom){
-        margin-bottom:$marpx;
-    }
-    @else if($mar==right){
-        margin-right:$marpx;
-    }
-    @else{
-        margin: $marpx;
-    }
+
+@mixin defmar($mar:margin, $marpx:10px) {
+  @if($mar==left) {
+    margin-left: $marpx;
+  }
+
+  @else if($mar==top) {
+    margin-top: $marpx;
+  }
+
+  @else if($mar==bottom) {
+    margin-bottom: $marpx;
+  }
+
+  @else if($mar==right) {
+    margin-right: $marpx;
+  }
+
+  @else {
+    margin: $marpx;
+  }
 }
-@mixin fontColor($color){
-    color: $color;
+
+@mixin fontColor($color) {
+  color: $color;
 }
+
 $maincolor:#00b38a;
-.moblieBox{
+
+.moblieBox {
   @include dispstyle(none);
 }
-.topBox{
-    height: 360px;
-    background-color: $maincolor;
+
+.topBox {
+  height: 360px;
+  background-color: $maincolor;
 }
-.loginBox{
-    width: 702px;
-    height: 493px;
-    background-color: white;
-    @include posistyle(absolute);
-    left: 50%;
-    @include defmar(left,-351px );
-    @include defmar(top,-343px );
-    .imgBox{
-        width: 100%;
-        height: 84px;
-        background-color: $maincolor;
-        a{
-            width: 112px;
-            height: 42px;
-            @include dispstyle(block);
-            img{
-                width: 112px;
-                height: 42px;
-            }
-        }
-    }
-    .aboutLogin{
-        width: 100%;
-        height: 400px;
-        border: 1px solid #d8d8d8;
-        @include defpad($padpx:6px );
-        box-sizing: border-box;
-        .qrcode{
-            width: 100%;
-            height: 52px;
-            .qrcodeA{
-                    width: 52px;
-                    height: 52px;
-                    @include dispstyle(block);
-                    background-image: url('../images/qrcode.svg');
-                    &:hover{
-                        background-image: url('../images/qrcodehover.svg');
-                    }
-                }
-            .wechatA{
-                    width: 106px;
-                    height: 34px;
-                    @include dispstyle(block);
-                    background-image:url('../images/wechat.svg');
-                    animation: wechatani 2s ease;
-                }
-                @keyframes wechatani{
-                    from{
-                        @include defmar(left,50px );
-                    }
-                    to{
-                        @include defmar(left,0 );
-                    }
-                }
-            .codeact{
-                    background-image: url('../images/computer.svg');
-                    &:hover{
-                        background-image: url('../images/computerhover.svg');
-                    }
-            }
-            .wxact{
-                background-image:url('../images/wechathover.svg');
-            }
-        }
-        .loginInfo{
-            width: 100%;
-            height: 357px;  
-            @include defpad(padding,0px 64px 62px 72px );
-            .leftText{
-                
-                width: 427px;
-                background-color: white;
-                border-right: 1px dashed #d8d8d8;
-                box-sizing: border-box;
-                ul{
-                    width: 290px;
-                    height: 286px;
-                    .borderBottom{
-                        border-bottom: 1px solid #d8d8d8;
-                        .active{
-                            color: $maincolor;
-                            border-color:$maincolor;
-                    }
-                }  
-                    li{
-                        @include defmar(bottom,10px);
-                        &:first-of-type{
-                            a{
-                                text-align: center;
-                                color: #333;
-                                font-size: 16px;
-                                height: 34px;
-                                width: 145px;
-                                box-sizing: border-box;
-                                border-bottom: 1px solid #d8d8d8;
-                            }
-                        }
-                        input{
-                            width: 290px;
-                            height: 44px;
-                            font-size: 14px;
-                            outline: 0;
-                            border: 0;
-                            background-color: rgba(0, 0, 0, 0);// 透明背景
-                        }
-                        .usernull{
-                            @include dispstyle(none);
-                            font-size: 12px;
-                            color: red;
-                            .exclamation{
-                                color: white;
-                                background-color: red;
-                                width: 14px;
-                                height: 14px;
-                                @include dispstyle(inline-block);
-                                text-align: center;
-                                border-radius: 50%;
-                            }
-                        }
-                        .passnull{
-                            @extend .usernull;
-                        }
-                        &:nth-of-type(4){
-                            a{
-                                font-size: 14px;
-                                color: $maincolor;
-                            }
-                        }
-                        &:last-of-type{
-                            button{
-                                box-sizing: border-box;
-                                width: 290px;
-                                height: 44px;
-                                background-color: $maincolor;
-                                border: 0;
-                                color: white;
-                                font-size: 18px;
-                                cursor:pointer;
-                            }
-                        }
-                    }
-                }
-                .textOr{
-                    @include posistyle(absolute);
-                    left: 495px;
-                    color: #d8d8d8;
-                    width: 19px;
-                    height: 25px;
-                    background-color: white;
-                    text-align: center;
-                    top: 270px;
-                    line-height: 25px;
-                    font-size: 14px;
-                }
-            }
-            .leftQrcode{
-                @include dispstyle(none);
-                width: 427px;
-                height: 277px;
-                box-sizing: border-box;
-                border-right: 1px dashed #d8d8d8;
-                @include posistyle(relative);
-                .qrcodeBox{
-                    width: 170px;
-                    height: 170px;
-                    @include posistyle(relative);
-                    @include defmar(margin,30px 0px 10px 70px );
-                    background-image: url('../images/wxqrcode.jpg');
-                }
-                span{
-                    @include dispstyle(block);
-                    text-align: center;
-                    @include defmar(left,-110px);
-                    font-size: 14px;
-                }
-                .codeOr{
-                    @include posistyle(absolute);
-                    right: -10px;
-                    color: #d8d8d8;
-                    width: 19px;
-                    height: 25px;
-                    background-color: white;
-                    text-align: center;
-                    top: 120px;
-                    line-height: 25px;
-                }
-            }
-        }
-    }
-}
-.rightBox{
-    width: 150px;
-    height: 222px;
-    color: #555;
-    font-size: 14px;
-    .register{
-        @include defmar(margin,70px 0 0 -90px);
-        width: 100%;
-        a{
-            font-size: 16px;
-            color: $maincolor;
-            &:hover{
-                text-decoration: underline;
-            }
-            @include dispstyle(block);
-            width: 87px;
-            @include defmar(top,10px );
-            // right center是在width足够的情况下用background-position属性定位到右边的中间的
-            background: url('../images/icon-arrow-right.png') no-repeat right center;
-        }
-    }
-    .loginWay{
-        /*loginWay的margin-left会影响register的margin-left*/
-        /*加宽度和高度可以解决上诉问题*/
-        @include defmar(margin,50px 0 0 -90px);
-        a{
-            @include dispstyle(inline-block);
-            width: 20px;
-            height: 16px;
-            color: #555;
-            @include defmar(margin,10px 10px 0 0);
-        }
-        .icon-weibo{
-            &:hover{
-                @include fontColor(red);
-            }
-        }
-        .icon-wechat{
-            &:hover{
-                @include fontColor($maincolor);
-            }
-        }
-        .icon-QQ{
-            &:hover{
-                @include fontColor(skyblue);
-            }
-        }
-        .icon-baidu1{
-            &:hover{
-                @include fontColor(blue);
-            }
-        }
-    }
-}
-@mixin moblieInput($padsize,$fontsize){
-  input{
+
+.loginBox {
+  width: 702px;
+  height: 493px;
+  background-color: white;
+  @include posistyle(absolute);
+  left: 50%;
+  @include defmar(left, -351px);
+  @include defmar(top, -343px);
+
+  .imgBox {
     width: 100%;
-    @include defpad(padding,$padsize);
+    height: 84px;
+    background-color: $maincolor;
+
+    a {
+      width: 112px;
+      height: 42px;
+      @include dispstyle(block);
+
+      img {
+        width: 112px;
+        height: 42px;
+      }
+    }
+  }
+
+  .aboutLogin {
+    width: 100%;
+    height: 400px;
+    border: 1px solid #d8d8d8;
+    @include defpad($padpx:6px);
+    box-sizing: border-box;
+
+    .qrcode {
+      width: 100%;
+      height: 52px;
+
+      .qrcodeA {
+        width: 52px;
+        height: 52px;
+        @include dispstyle(block);
+        background-image: url('../images/qrcode.svg');
+
+        &:hover {
+          background-image: url('../images/qrcodehover.svg');
+        }
+      }
+
+      .wechatA {
+        width: 106px;
+        height: 34px;
+        @include dispstyle(block);
+        background-image: url('../images/wechat.svg');
+        animation: wechatani 2s ease;
+      }
+
+      @keyframes wechatani {
+        from {
+          @include defmar(left, 50px);
+        }
+
+        to {
+          @include defmar(left, 0);
+        }
+      }
+
+      .codeact {
+        background-image: url('../images/computer.svg');
+
+        &:hover {
+          background-image: url('../images/computerhover.svg');
+        }
+      }
+
+      .wxact {
+        background-image: url('../images/wechathover.svg');
+      }
+    }
+
+    .loginInfo {
+      width: 100%;
+      height: 357px;
+      @include defpad(padding, 0px 64px 62px 72px);
+
+      .leftText {
+
+        width: 427px;
+        background-color: white;
+        border-right: 1px dashed #d8d8d8;
+        box-sizing: border-box;
+
+        ul {
+          width: 290px;
+          height: 286px;
+
+          .borderBottom {
+            border-bottom: 1px solid #d8d8d8;
+
+            .active {
+              color: $maincolor;
+              border-color: $maincolor;
+            }
+          }
+
+          li {
+            @include defmar(bottom, 10px);
+
+            &:first-of-type {
+              a {
+                text-align: center;
+                color: #333;
+                font-size: 16px;
+                height: 34px;
+                width: 145px;
+                box-sizing: border-box;
+                border-bottom: 1px solid #d8d8d8;
+              }
+            }
+
+            .codelogin {
+              @include dispstyle(none);
+
+              .phoneNum {
+                @include dispstyle(flex);
+
+
+                .startNum {
+                  font-size: 16px;
+                  height: 44px;
+                  line-height: 44px;
+                }
+
+                input {
+                  font-size: 16px;
+                  flex: 1;
+                  height: 44px;
+                  box-sizing: border-box;
+                  color: #333;
+                  border: none;
+                  outline: none;
+                }
+              }
+
+              .phoneCode {
+                @include dispstyle(flex);
+
+                input {
+                  font-size: 16px;
+                  flex: 1;
+                  height: 44px;
+                  box-sizing: border-box;
+                  color: #333;
+                  border: none;
+                  outline: none;
+                }
+
+                .getCode {
+                  color: $maincolor;
+                  font-size: 13px;
+                  text-align: center;
+                  @include dispstyle(inline-block);
+                  height: 44px;
+                  line-height: 44px;
+                }
+              }
+            }
+
+            .passlogin {
+
+              input {
+                width: 290px;
+                height: 44px;
+                font-size: 14px;
+                outline: 0;
+                border: 0;
+                background-color: rgba(0, 0, 0, 0); // 透明背景
+              }
+
+              .usernull {
+                @include dispstyle(none);
+                font-size: 12px;
+                color: red;
+
+                .exclamation {
+                  color: white;
+                  background-color: red;
+                  width: 14px;
+                  height: 14px;
+                  @include dispstyle(inline-block);
+                  text-align: center;
+                  border-radius: 50%;
+                }
+              }
+
+              .passnull {
+                @extend .usernull;
+              }
+            }
+
+            &:nth-of-type(4) {
+              a {
+                font-size: 14px;
+                color: $maincolor;
+              }
+            }
+
+            &:last-of-type {
+              button {
+                box-sizing: border-box;
+                width: 290px;
+                height: 44px;
+                background-color: $maincolor;
+                border: 0;
+                color: white;
+                font-size: 18px;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        .textOr {
+          @include posistyle(absolute);
+          left: 495px;
+          color: #d8d8d8;
+          width: 19px;
+          height: 25px;
+          background-color: white;
+          text-align: center;
+          top: 270px;
+          line-height: 25px;
+          font-size: 14px;
+        }
+      }
+
+      .leftQrcode {
+        @include dispstyle(none);
+        width: 427px;
+        height: 277px;
+        box-sizing: border-box;
+        border-right: 1px dashed #d8d8d8;
+        @include posistyle(relative);
+
+        .qrcodeBox {
+          width: 170px;
+          height: 170px;
+          @include posistyle(relative);
+          @include defmar(margin, 30px 0px 10px 70px);
+          background-image: url('../images/wxqrcode.jpg');
+        }
+
+        span {
+          @include dispstyle(block);
+          text-align: center;
+          @include defmar(left, -110px);
+          font-size: 14px;
+        }
+
+        .codeOr {
+          @include posistyle(absolute);
+          right: -10px;
+          color: #d8d8d8;
+          width: 19px;
+          height: 25px;
+          background-color: white;
+          text-align: center;
+          top: 120px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+}
+
+.rightBox {
+  width: 150px;
+  height: 222px;
+  color: #555;
+  font-size: 14px;
+
+  .register {
+    @include defmar(margin, 70px 0 0 -90px);
+    width: 100%;
+
+    a {
+      font-size: 16px;
+      color: $maincolor;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @include dispstyle(block);
+      width: 87px;
+      @include defmar(top, 10px);
+      // right center是在width足够的情况下用background-position属性定位到右边的中间的
+      background: url('../images/icon-arrow-right.png') no-repeat right center;
+    }
+  }
+
+  .loginWay {
+    /*loginWay的margin-left会影响register的margin-left*/
+    /*加宽度和高度可以解决上诉问题*/
+    @include defmar(margin, 50px 0 0 -90px);
+
+    a {
+      @include dispstyle(inline-block);
+      width: 20px;
+      height: 16px;
+      color: #555;
+      @include defmar(margin, 10px 10px 0 0);
+    }
+
+    .icon-weibo {
+      &:hover {
+        @include fontColor(red);
+      }
+    }
+
+    .icon-wechat {
+      &:hover {
+        @include fontColor($maincolor);
+      }
+    }
+
+    .icon-QQ {
+      &:hover {
+        @include fontColor(skyblue);
+      }
+    }
+
+    .icon-baidu1 {
+      &:hover {
+        @include fontColor(blue);
+      }
+    }
+  }
+}
+
+@mixin moblieInput($padsize, $fontsize) {
+  input {
+    width: 100%;
+    @include defpad(padding, $padsize);
     font-size: $fontsize;
     box-sizing: border-box;
     color: #333;
     border: 0;
     border-bottom: 1px solid #E8E9EB;
-    outline: none;//输入框获取焦点时去掉边框
+    outline: none; //输入框获取焦点时去掉边框
   }
 }
-@media (max-width:500px) and (min-width:360px){
-  html{
+
+@media screen and (max-width:1024px) {
+  html {
     height: 100%;
   }
-  body{
+
+  body {
     height: 100%;
-    @include defpad(padding,10%);
+    @include defpad(padding, 10%);
   }
-  .pcBox{
+
+  .pcBox {
     @include dispstyle(none);
   }
-  .moblieBox{
+
+  .moblieBox {
     @include dispstyle(block);
     width: 100%;
     height: 100%;
-    font-size: 1.2rem;
-    .boxTop{
-      h2{
-        font-size: 1.2rem;
+
+    .boxTop {
+      h2 {
+        font-size: 1.4rem;
         font-weight: 400;
       }
-      a{
-        font-size: 1rem;
+
+      a {
+        font-size: 1.4rem;
         color: $maincolor;
       }
-      @include defmar(bottom,10% );
+
+      @include defmar(bottom, 10%);
     }
-    .username{
-      @include moblieInput(5% 0,1.2rem);
+
+    .username {
+      @include moblieInput(5% 0, 1.2rem);
     }
-    .password{
-      @include moblieInput(5% 0,1.2rem);
-      @include defmar(bottom,15% );
-    }
-    .loginBtn{
-      width:100%;
-      height:7%;
-      background-color: $maincolor;
-      text-align: center;
-      border: 0;
-      color: white;
-      @include defmar(bottom,10% );
-    }
-    .mobileLogin{
-      font-size: 1rem;
-      color: $maincolor;
-    }
-  }
-}
-@media (max-width:1024px) and (min-width:500px){
-  html{
-    height: 100%;
-  }
-  body{
-    height: 100%;
-    @include defpad(padding,10% 8%);
-  }
-  .pcBox{
-    @include dispstyle(none);
-  }
-  .moblieBox{
-    @include dispstyle(block);
-    @include defmar(margin,0 auto );
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    font-size: 3rem;
-    .boxTop{
-      h2{
-        font-size: 2.4rem;
-        font-weight: 400;
-      }
-      a{
-        font-size: 2rem;
-        color: $maincolor;
-      }
-      @include defmar(bottom,5% );
-    }
-    .username{
-      @include moblieInput(5% 0,2.2rem);
-    }
-    .password{
-      @include moblieInput(5% 0,2.2rem);
-      @include defmar(bottom,9% );
-    }
-    .loginBtn{
-      width:100%;
+
+    .phoneNum {
+
+      @include dispstyle(none);
+      border-bottom: 1px solid #E8E9EB;
       height: 8%;
-      background-color: $maincolor;
-      text-align: center;
-      border: 0;
-      color: white;
-      font-size: 2rem;
-      @include defmar(bottom,5% );
-    }
-    .mobileLogin{
-      font-size: 0.4rem;
-      color: $maincolor;
-      font-size: 1.7rem;
-    }
-  }
-}
-@media (max-width:360px){
-  html{
-    height: 100%;
-  }
-  body{
-    height: 100%;
-    @include defpad(padding,25% 8%);
-  }
-  .pcBox{
-    @include dispstyle(none);
-  }
-  .moblieBox{ 
-    @include dispstyle(block);
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    font-size: 2rem;
-    .boxTop{
-      h2{
+
+      input {
         font-size: 1.2rem;
-        font-weight: 400;
+        flex: 1;
+        height: 100%;
+        box-sizing: border-box;
+        color: #333;
+        border: none;
+        outline: none;
+
+        &::-webkit-input-placeholder {
+          color: #E8E9EB;
+        }
       }
-      a{
+    }
+
+    .protocol {
+      @include dispstyle(none);
+
+      span {
+        color: #999;
         font-size: .8rem;
-        color: $maincolor;
-        @include defmar(top,.1rem );
+        @include defmar(top, .53rem);
       }
-      @include defmar(bottom,10% );
+
+      a {
+        font-size: .87rem;
+        color: #333;
+      }
     }
-    .username{
-      @include moblieInput(5% 0,1rem);
+
+    .password {
+      @include moblieInput(5% 0, 1.2rem);
+      @include defmar(bottom, 15%);
     }
-    .password{
-      @include moblieInput(5% 0,1rem);
-      @include defmar(bottom,16% );
+
+    .phoneCode {
+      @include dispstyle(none);
+      border-bottom: 1px solid #E8E9EB;
+      @include defmar(bottom, 15%);
+      height: 8%;
+      width: 100%;
+
+      .getCode {
+        color: $maincolor;
+        font-size: .83rem;
+        text-align: center;
+        line-height: 4rem;
+        height: 100%;
+        @include dispstyle(inline-block);
+      }
+
+      input {
+        font-size: 1.2rem;
+        flex: 1;
+        height: 100%;
+        box-sizing: border-box;
+        color: #333;
+        border: none;
+        outline: none;
+
+        &::-webkit-input-placeholder {
+          color: #E8E9EB;
+        }
+      }
+
+
     }
-    .loginBtn{
-      width:100%;
+
+    .loginBtn {
+      width: 100%;
       height: 7%;
       background-color: $maincolor;
       text-align: center;
       border: 0;
-      color: white;
       border-radius: 3px;
-      font-size: 1rem;
+      color: white;
+      font-size: 1.2rem;
+      @include defmar(bottom, 10%);
     }
-    .mobileLogin{
-      font-size: .8rem;
+
+    .mobileLogin {
+      font-size: 1rem;
       color: $maincolor;
     }
   }

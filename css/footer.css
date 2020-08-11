@@ -110,7 +110,7 @@
 .footer .footer_Report a i {
   width: 14px;
   height: 14px;
-  background: url("../img/sprite.png") no-repeat -151px -184px;
+  background: url("../images/sprite.png") no-repeat -151px -184px;
   margin-right: 6px;
 }
 
@@ -130,7 +130,7 @@
 .footer .footer_Report .contactInfo i {
   width: 20px;
   height: 24px;
-  background: url("../img/sprite.png") no-repeat -132px -20px;
+  background: url("../images/sprite.png") no-repeat -132px -20px;
   margin: 14px 9px 0 14px;
 }
 

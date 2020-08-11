@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" charset="text/html;charset=utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- telephone=no禁止把数字转化为拨号链接，email=no禁止作为邮箱地址 -->
+  <meta name="format-detecion" content="telephone=no,email=no">
+  <!-- content=yes则显示苹果工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- 让网页内容以应用程序风格显示，并使状态栏为黑色 -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- 如果网页采用了响应式网页设计不需要经过url自适配跳转就可以根据浏览器的屏幕大小自适应的展现合适的效果 -->
+  <meta name="applicable-device" content="mobile">
+  <!-- 百度官方给的禁止转码声明（以下两条meta） -->
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-no-siteapp">
+  <meta name="keywords" content="招聘,找工作,求职,招聘网站,互联网招聘">
+  <!-- 网址描述 -->
+  <meta name="description" content="拉勾招聘是专业的互联网求职招聘网站，致力于提供真实可靠的互联网岗位求职招聘工作信息，拥有海量的互联网人才储备，互联网行业找工作就上拉勾招聘，值得信赖的求职招聘网站">
+  <title>互联网求职招聘找工作-上拉勾招聘-专业的互联网求职招聘网站</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/indexpm.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/iconfont.css">
+  <script>
+    var deviceWidth = window.screen.width;
+    (function () {
+      if (deviceWidth > 1024) {
+        window.location = "home.html";
+      }
+    })()
+  </script>
+  <script>
+    //设计稿是750px，动态设置设计稿下font-size为100px
+    //总结：要有一个设计稿的宽度，其次要设置这个设计稿宽度下的font-size是多少，然后进行动态设置font-size
+    //通过获取设备的宽度/设计稿的宽度 *设置的font-size然后再设置当前设备的font-size为前面的结果，然后监听
+    //resize事件，动态执行getRem()
+    (function (designWidth, n) {
+      function getRem() {
+        var html = document.getElementsByTagName("html")[0];
+        var deviceWidth = document.documentElement.clientWidth;
+        var rem = deviceWidth / designWidth * n;
+        console.log(rem)
+        html.style.fontSize = rem + "px";
+      }
+      getRem();
+      //监听事件通过resize，只要屏幕发生改变，就会触发resize事件
+      window.addEventListener('resize', function () {
+        getRem();
+      })
+    })(750, 100);
+  </script>
+</head>
+
+<body>
+  <header id="header">拉勾网</header>
+  <section id="positionBox">
+    <div class="contentTop">
+      <span>10秒钟定制职位</span>
+      <button class="rf">去登录</button>
+    </div>
+    <ul class="contentData">
+      <li>
+        <div class="imgBox">
+          <img src="images/teletraan.jpg" alt="teletraan" />
+        </div>
+        <div class="textBox">
+          <h2>TELETRAAN</h2>
+          <span class="salary rf">12k-24k</span>
+          <p>Android开发工程师</p>
+          <p>昨天23：53</p>
+        </div>
+      </li>
+      <li>
+        <div class="imgBox">
+          <img src="images/ant.jpeg" alt="teletraan" />
+        </div>
+        <div class="textBox">
+          <h2>TELETRAAN</h2>
+          <span class="salary rf">12k-24k</span>
+          <p>Android开发工程师</p>
+          <p>昨天23：53</p>
+        </div>
+      </li>
+      <li>
+        <div class="imgBox">
+          <img src="images/guanyuan.png" alt="teletraan" />
+        </div>
+        <div class="textBox">
+          <h2>TELETRAAN</h2>
+          <span class="salary rf">12k-24k</span>
+          <p>Android开发工程师</p>
+          <p>昨天23：53</p>
+        </div>
+      </li>
+      <li>
+        <div class="imgBox">
+          <img src="images/jinuo.png" alt="teletraan" />
+        </div>
+        <div class="textBox">
+          <h2>TELETRAAN</h2>
+          <span class="salary rf">12k-24k</span>
+          <p>Android开发工程师</p>
+          <p>昨天23：53</p>
+        </div>
+      </li>
+      <li>
+        <div class="imgBox">
+          <img src="images/juzi.png" alt="teletraan" />
+        </div>
+        <div class="textBox">
+          <h2>TELETRAAN</h2>
+          <span class="salary rf">12k-24k</span>
+          <p>Android开发工程师</p>
+          <p>昨天23：53</p>
+        </div>
+      </li>
+      <li>
+        <div class="imgBox">
+          <img src="images/lvman.png" alt="teletraan" />
+        </div>
+        <div class="textBox">
+          <h2>TELETRAAN</h2>
+          <span class="salary rf">12k-24k</span>
+          <p>Android开发工程师</p>
+          <p>昨天23：53</p>
+        </div>
+      </li>
+      <li>
+        <div class="imgBox">
+          <img src="images/moli.png" alt="teletraan" />
+        </div>
+        <div class="textBox">
+          <h2>TELETRAAN</h2>
+          <span class="salary rf">12k-24k</span>
+          <p>Android开发工程师</p>
+          <p>昨天23：53</p>
+        </div>
+      </li>
+      <li>
+        <div class="imgBox">
+          <img src="images/versa.png" alt="teletraan" />
+        </div>
+        <div class="textBox">
+          <h2>TELETRAAN</h2>
+          <span class="salary rf">12k-24k</span>
+          <p>Android开发工程师</p>
+          <p>昨天23：53</p>
+        </div>
+      </li>
+      <li>
+        <div class="imgBox">
+          <img src="images/xiyue.png" alt="teletraan" />
+        </div>
+        <div class="textBox">
+          <h2>TELETRAAN</h2>
+          <span class="salary rf">12k-24k</span>
+          <p>Android开发工程师</p>
+          <p>昨天23：53</p>
+        </div>
+      </li>
+      <li>
+        <div class="imgBox">
+          <img src="images/zhanhong.png" alt="teletraan" />
+        </div>
+        <div class="textBox">
+          <h2>TELETRAAN</h2>
+          <span class="salary rf">12k-24k</span>
+          <p>Android开发工程师</p>
+          <p>昨天23：53</p>
+        </div>
+      </li>
+      <li>
+        <div class="imgBox">
+          <img src="images/zhongdihang.png" alt="teletraan" />
+        </div>
+        <div class="textBox">
+          <h2>TELETRAAN</h2>
+          <span class="salary rf">12k-24k</span>
+          <p>Android开发工程师</p>
+          <p>昨天23：53</p>
+        </div>
+      </li>
+    </ul>
+    <div class="moreBtn">
+      <button>加载更多</button>
+    </div>
+    <section class="otherInfo">
+      <span>@2020&nbsp;lagou.com&nbsp;all&nbsp;right&nbsp;reserved</span>
+      <span>移动版&nbsp;电脑版&nbsp;回顶部</span>
+    </section>
+  </section>
+  <section id="searchBox">
+    <section class="searchTop">
+      <div class="searchBtn rf">
+        <a href="#" class="iconfont icon-fangdajing"></a>
+      </div>
+      <div class="inputSearch rf">
+        <input type="text" placeholder="搜索职位或者公司">
+      </div>
+      <a href="#" class="location">全国&nbsp;<span>v</span></a>
+    </section>
+    <section class="searchContent">
+
+    </section>
+  </section>
+  <section id="centerBox">
+    <div class="loginBtn">
+      <button>登录&nbsp;/&nbsp;注册</button>
+    </div>
+    <div class="operateWay">
+      <div class="deliver">
+        <a href="#">投递</a>
+      </div>
+      <div class="interview">
+        <a href="#">面试</a>
+      </div>
+      <div class="invite">
+        <a href="#">邀约</a>
+      </div>
+      <div class="collect">
+        <a href="#">收藏</a>
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="active lf">
+      <a href="#" class="bottomNar"><i class="iconfont icon-home"></i>职位</a>
+    </div>
+    <div class="lf">
+      <a href="#" class="bottomNar"><i class="iconfont icon-fangdajing"></i>搜索</a>
+    </div>
+    <div class="lf">
+      <a href="#" class="bottomNar"><i class="iconfont icon-yonghu"></i>我的</a>
+    </div>
+  </footer>
+  <script src="js/index.js"></script>
+  <script>
+    window.onload = function () {
+      let getPosition = document.getElementById("positionBox");
+      let getSearch = document.getElementById("searchBox");
+      let getCenter = document.getElementById("centerBox");
+      let getBtn = document.getElementsByTagName("button");
+      let getNar = document.getElementsByClassName("bottomNar");
+      gotoOnclick(getBtn[0]);
+      gotoOnclick(getBtn[2]);
+      hideOnclick(getNar, positionBox, searchBox, centerBox);
+    }
+  </script>
+</body>
+
+</html>

@@ -21,6 +21,8 @@
   <link rel="stylesheet" ype="text/css" href="css/iconfont.css">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
+
+
 <body>
   <div class="moblieBox">
     <section class="boxTop">
@@ -30,10 +32,18 @@
     <div class="username">
       <input type="text" placeholder="请输入已验证的手机号或邮箱">
     </div>
+    <div class="phoneNum clear">
+      <input class="lf" type="text" placeholder="请输入常用手机号码">
+    </div>
     <div class="password">
       <input type="text" placeholder="请输入密码">
     </div>
+    <div class="phoneCode">
+      <input type="text" placeholder="请输入手机验证码">
+      <span class="getCode">获取验证码</span>
+    </div>
     <button class="loginBtn">登录</button>
+    <div class="protocol"><span>注册拉勾代表你已同意</span><a href="http://www.lagou.com/privacy.html">《拉勾用户协议》</a></div>
     <a href="#" class="mobileLogin">手机号登录</a>
   </div>
   <div class="pcBox">
@@ -57,13 +67,30 @@
                 <a href="#" class="lf">验证码登录</a>
               </li>
               <li class="borderBottom">
-                <input type="text" name="username" onblur="userOnblur()" onfocus="userOnfocus()" placeholder="请输入常用手机号/邮箱">
-                <div class="usernull"><span class="exclamation">!</span><span>请输入已验证手机/邮箱</span></div>
+                <div class="passlogin">
+                  <input type="text" name="username" onblur="userOnblur()" onfocus="userOnfocus()"
+                    placeholder="请输入常用手机号/邮箱">
+                  <div class="usernull"><span class="exclamation">!</span><span>请输入已验证手机/邮箱</span></div>
+                </div>
+                <div class="codelogin">
+                  <div class="phoneNum clear">
+                    <div class="startNum lf">0086&nbsp;&nbsp;&nbsp;&or;</div>
+                    <input class="lf" type="text" placeholder="请输入常用手机号码">
+                  </div>
+                </div>
               </li>
               <li class="borderBottom">
-                <input type="password" name="password" onblur="passOnblur()" onfocus="passOnfocus()"
-                  placeholder="请输入密码">
-                <div class="passnull"><span class="exclamation">!</span><span>请输入密码</span></div>
+                <div class="passlogin">
+                  <input type="password" name="password" onblur="passOnblur()" onfocus="passOnfocus()"
+                    placeholder="请输入密码">
+                  <div class="passnull"><span class="exclamation">!</span><span>请输入密码</span></div>
+                </div>
+                <div class="codelogin">
+                  <div class="phoneCode">
+                    <input type="text" placeholder="请输入手机验证码">
+                    <a class="getCode" href="#">获取验证码</a>
+                  </div>
+                </div>
               </li>
               <li class="clear">
                 <a href="#" class="rf">忘记密码?</a>
@@ -82,7 +109,7 @@
           <section class="rightBox rf">
             <div class="register">
               <h5>还没有账号：</h5>
-              <a href="#">立即注册</a>
+              <a href="into.html" target="_blank">立即注册</a>
             </div>
             <div class="loginWay">
               <h5>使用以下账号直接登录:</h5>
@@ -99,35 +126,113 @@
   </div>
   <script>
     window.onload = function () {
-      var getA = document.getElementsByTagName("a");
-      var getCode = document.getElementsByClassName("leftQrcode");
-      var getText = document.getElementsByClassName("leftText");
-      var waySwitch = true;
-      console.log(getA);
-      getA[3].onclick = function () {
-        getA[3].classList.add("codeact");
-        getA[4].classList.add("wxact");
-      }
-      getA[4].onclick = function () {
-        getA[4].classList.add("wxact");
-        getA[3].classList.add("codeact");
-      }
-      getA[1].onclick = function (ev) {
-        // ev.preventDefault();
-        if (waySwitch) {
-          getA[1].classList.add("codeact");
-          getA[2].classList.add("wxact");
-          getCode[0].style.display = "block";
-          getText[0].style.display = "none";
-          waySwitch = !waySwitch;
+      //pc
+      var liElement = document.getElementsByClassName("borderBottom");
+      var aElement = liElement[0].querySelectorAll("a");
+      var qrcodeElement = document.getElementsByClassName("qrcode");
+      var picTab = qrcodeElement[0].querySelectorAll("a");
+      var isqrcode = true; //默认是显示二维码的svg
+      var leftTextEle = document.getElementsByClassName("leftText");
+      var leftQrcodeEle = document.getElementsByClassName("leftQrcode");
+      //mobile
+      var mobileEle = document.getElementsByClassName("moblieBox");
+      var loginBtn = mobileEle[0].querySelector(".loginBtn");
+      var mobileH2 = mobileEle[0].querySelector("h2");
+      var mobileallA = mobileEle[0].querySelectorAll("a");
+      var mobileinputEle = mobileEle[0].querySelectorAll("div");
+      var isuserLogin = true; //默认是账号密码登录
+      var islogin = true; //默认是登录界面
+      mobileallA[2].onclick = function () {
+        if (isuserLogin) {
+          mobileinputEle[0].style.display = "none";
+          mobileinputEle[2].style.display = "none";
+          mobileinputEle[1].style.display = "flex";
+          mobileinputEle[3].style.display = "flex";
+          this.innerHTML = "账号密码登录";
+          isuserLogin = !isuserLogin;
         } else {
-          getA[1].classList.remove("codeact");
-          getA[2].classList.remove("wxact");
-          getCode[0].style.display = "none";
-          getText[0].style.display = "block";
-          waySwitch = !waySwitch;
+          mobileinputEle[1].style.display = "none";
+          mobileinputEle[3].style.display = "none";
+          mobileinputEle[0].style.display = "block";
+          mobileinputEle[2].style.display = "block";
+          this.innerHTML = "手机号登陆";
+          isuserLogin = !isuserLogin;
         }
-        return false;
+      }
+      mobileallA[0].onclick = function () {
+        if (islogin) {
+          mobileinputEle[0].style.display = "none";
+          mobileinputEle[2].style.display = "none";
+          mobileinputEle[1].style.display = "flex";
+          mobileinputEle[3].style.display = "flex";
+          mobileinputEle[4].style.display = "block";
+          loginBtn.innerHTML = "注册";
+          this.innerHTML = "登录";
+          mobileH2.innerHTML = "注册拉勾";
+          mobileallA[2].style.display = "none";
+          islogin = !islogin;
+        } else {
+          mobileinputEle[0].style.display = "block";
+          mobileinputEle[2].style.display = "block";
+          mobileinputEle[1].style.display = "none";
+          mobileinputEle[3].style.display = "none";
+          mobileinputEle[4].style.display = "none";
+          loginBtn.innerHTML = "登录";
+          this.innerHTML = "注册";
+          mobileH2.innerHTML = "登录拉勾";
+          mobileallA[2].style.display = "block";
+          islogin = !islogin;
+        }
+      }
+      console.log(mobileinputEle);
+      aElement[0].onclick = function () {
+        aElement[1].classList.remove("active");
+        this.classList.add("active");
+        liElement[1].querySelector(".codelogin").style.display = "none";
+        liElement[2].querySelector(".codelogin").style.display = "none";
+        liElement[1].querySelector(".passlogin").style.display = "block";
+        liElement[2].querySelector(".passlogin").style.display = "block";
+        liElement[2].nextElementSibling.querySelector("a").style.display =
+          "block"; //nextElementSibling获取当前节点的下一兄弟节点
+      }
+      aElement[1].onclick = function () {
+        aElement[0].classList.remove("active");
+        this.classList.add("active");
+        liElement[1].querySelector(".passlogin").style.display = "none";
+        liElement[2].querySelector(".passlogin").style.display = "none";
+        liElement[1].querySelector(".codelogin").style.display = "block";
+        liElement[2].querySelector(".codelogin").style.display = "block";
+        liElement[2].nextElementSibling.querySelector("a").style.display = "none";
+      }
+      picTab[0].onclick = function () {
+        if (isqrcode) {
+          this.classList.add("codeact");
+          picTab[1].classList.add("wxact");
+          isqrcode = !isqrcode;
+          leftQrcodeEle[0].style.display = "block";
+          leftTextEle[0].style.display = "none";
+        } else {
+          this.classList.remove("codeact");
+          picTab[1].classList.remove("wxact");
+          isqrcode = !isqrcode;
+          leftTextEle[0].style.display = "block";
+          leftQrcodeEle[0].style.display = "none";
+        }
+      }
+      picTab[1].onclick = function () {
+        if (isqrcode) {
+          picTab[0].classList.add("codeact");
+          this.classList.add("wxact");
+          isqrcode = !isqrcode;
+          leftQrcodeEle[0].style.display = "block";
+          leftTextEle[0].style.display = "none";
+        } else {
+          picTab[0].classList.remove("codeact");
+          this.classList.remove("wxact");
+          isqrcode = !isqrcode;
+          leftTextEle[0].style.display = "block";
+          leftQrcodeEle[0].style.display = "none";
+        }
       }
     }
   </script>

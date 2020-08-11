@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>找工作就上拉钩网</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/into.css">
+  <link rel="stylesheet" href="css/iconfont.css">
+  <script type="text/javascript" src="js/jquery-3.4.0.js"></script>
+
+</head>
+
+<body>
+  <div id="main">
+    <div id="top">
+      <div class="container">
+        <div class="download rf">
+          <i class="iconfont icon-shouji"></i>
+          <span>拉勾APP</span>
+        </div>
+        <div class="qrcode_app">
+          <img src="images/company/lagou.png" alt="下载拉勾二维码">
+        </div>
+        <div class="logoimg">
+          <img src="images/logo-slogan.png" alt="拉勾专注人才招聘logo">
+        </div>
+      </div>
+    </div>
+    <div id="center">
+      <div class="container">
+        <img class="logoimg" src="images/slgon.png" alt="想去互联网好公司就上拉钩">
+        <div class="loginBox rf">
+          <p class="title"><span class="green">一键</span>注册&nbsp;轻松获高薪</p>
+          <form action="get" id="phoneForm">
+            <div class="phoneNum clear">
+              <div class="startNum lf">0086&nbsp;&nbsp;&nbsp;&or;</div>
+              <input class="lf" type="text" placeholder="请输入常用手机号码">
+            </div>
+            <div class="phoneCode">
+              <input type="text" placeholder="请输入手机验证码">
+              <a class="getCode" href="#">获取验证码</a>
+            </div>
+            <input class="nowRegister" type="button" value="立即注册">
+            <div class="explain">注册代表你已同意<a href="#">「拉勾用户协议」</a></div>
+          </form>
+          <div class="loginBtn">
+            <a href="login.html" target="_blank">已有帐号，直接登录</a>
+          </div>
+        </div>
+        <div class="findJob">
+          <div class="searchBtn">
+            <i class="iconfont icon-search"></i>
+            <input type="text" placeholder="搜索职位名称、查看本月高新招聘信息">
+            <button class="searchPos">搜索职位</button>
+          </div>
+          <ul class="positions">
+
+          </ul>
+          <div class="posType">
+            <ul>
+              <li class="active" key="tech">技术</li>
+              <li key="prod">产品</li>
+              <li key="desi">设计</li>
+              <li key="mark">市场</li>
+              <li key="oper">运营</li>
+              <li key="sell">销售</li>
+            </ul>
+            <div class="company">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="footerTop">
+          <ul class="clear">
+            <li>
+              <div class="text">
+                <p>极速入职</p>
+                <p>最快24小时拿到企业offer</p>
+              </div>
+              <img src="images/company/icon1.png" alt="快速入职">
+            </li>
+            <li>
+              <div class="text">
+                <p>隐私保护</p>
+                <p>安全私密快速投简历</p>
+              </div>
+              <img src="images/company/icon2.png" alt="隐私保护">
+            </li>
+            <li>
+              <div class="text">
+                <p>薪资透明</p>
+                <p>薪资透明真实谢绝面议</p>
+              </div>
+              <img src="images/company/icon3.png" alt="薪资透明">
+            </li>
+            <li>
+              <div class="text">
+                <p>海量信息</p>
+                <p>海量互联网职位实时更新</p>
+              </div>
+              <img src="images/company/icon4.png" alt="海量信息">
+            </li>
+          </ul>
+        </div>
+        <div class="footerBot">
+
+          <p>
+            <span>©拉勾网 京ICP备14023790号-2</span>
+            <span class="footerLine"></span>
+            <span>京公网安备 11010802024043号</span>
+            <span class="footerLine"></span>
+            <span>违法和不良信息举报电话：4006 2828 35 (9:00 -18:00)</span>
+            <span class="footerLine"></span>
+            <span>举报邮箱：cc@lagou.com</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  $(function ($) {
+    $("#top").find(".download").mouseenter(function () {
+      $("#top").find(".qrcode_app").css("display", "block");
+    }).mouseleave(function () {
+      $("#top").find(".qrcode_app").css("display", "none");
+    })
+  });
+  $(function () {
+    $.ajax({
+      url: 'json/tech.json',
+      type: "GET",
+      dataType: "json",
+      success: (res) => {
+        console.log(res);
+        let keyName = $("#center").find(".posType ul li").eq(0).attr("key");
+        let data = res.imgdata;
+        let imgElement = '';
+        for (let i = 0; i < data.length; i++) {
+          imgElement +=
+            `<img src='${data[i].images}' alt='略...' key='${data[i].key}' width='${data[i].width}' height='${data[i].height}'/>`;
+        }
+        $("#center").find(".company").append(imgElement);
+        window.sessionStorage.setItem(keyName, imgElement);
+      }
+    });
+    $("#center").find(".posType ul li").on("click", function () {
+      $("#center").find(".posType ul li").removeClass("active");
+      $(this).addClass("active");
+      var keyName = $(this).attr("key");
+      $("#center").find(".company img").remove();
+      let imgEle = window.sessionStorage.getItem(keyName);
+      if (imgEle) {
+        $("#center").find(".company").append(imgEle);
+      } else {
+        $.ajax({
+          url: `json/${keyName}.json`,
+          type: "GET",
+          dataType: "json",
+          success: (res) => {
+            let data = res.imgdata;
+            let imgElement = '';
+            for (let i = 0; i < data.length; i++) {
+              imgElement +=
+                `<img src='${data[i].images}' alt='略...' key='${data[i].key}' width='${data[i].width}' height='${data[i].height}'/>`;
+            }
+            $("#center").find(".company").append(imgElement);
+            window.sessionStorage.setItem(keyName, imgElement);
+          }
+        })
+      }
+
+    });
+    $("#center").find(".searchBtn input").keyup(function () {
+      // console.log($("#center").find(".searchBtn input").val());
+      let inputVal = $(this).val();
+      $.ajax({
+        url: `json/${inputVal}.json`,
+        type: "GET",
+        dataType: "json",
+        success: (res) => {
+          console.log(res);
+          let data = res.data;
+          let liElement = '';
+          for (let i of data) {
+            liElement += `<li>${i}</li>`;
+          }
+          $("#center").find(".positions li").remove();
+          $("#center").find(".positions").append(liElement);
+          $("#center").find(".positions").css("display", "block");
+        },
+        error: (err) => {
+          $("#center").find(".positions li").remove();
+          let liElement = '<li>暂时无该职位信息</li>'
+          $("#center").find(".positions").append(liElement);
+          $("#center").find(".positions").css("display", "block");
+        }
+      })
+    }).mouseleave(function () {
+      $("#center").find(".positions li").remove();
+      $("#center").find(".positions").css("display", "none");
+    })
+  })
+</script>
+
+</html>

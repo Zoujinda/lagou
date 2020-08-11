@@ -53,18 +53,18 @@
   width: 52px;
   height: 52px;
   display: block;
-  background-image: url("../img/qrcode.svg");
+  background-image: url("../images/qrcode.svg");
 }
 
 .loginBox .aboutLogin .qrcode .qrcodeA:hover {
-  background-image: url("../img/qrcodehover.svg");
+  background-image: url("../images/qrcodehover.svg");
 }
 
 .loginBox .aboutLogin .qrcode .wechatA {
   width: 106px;
   height: 34px;
   display: block;
-  background-image: url("../img/wechat.svg");
+  background-image: url("../images/wechat.svg");
   -webkit-animation: wechatani 2s ease;
           animation: wechatani 2s ease;
 }
@@ -88,15 +88,15 @@
 }
 
 .loginBox .aboutLogin .qrcode .codeact {
-  background-image: url("../img/computer.svg");
+  background-image: url("../images/computer.svg");
 }
 
 .loginBox .aboutLogin .qrcode .codeact:hover {
-  background-image: url("../img/computerhover.svg");
+  background-image: url("../images/computerhover.svg");
 }
 
 .loginBox .aboutLogin .qrcode .wxact {
-  background-image: url("../img/wechathover.svg");
+  background-image: url("../images/wechathover.svg");
 }
 
 .loginBox .aboutLogin .loginInfo {
@@ -142,7 +142,64 @@
   border-bottom: 1px solid #d8d8d8;
 }
 
-.loginBox .aboutLogin .loginInfo .leftText ul li input {
+.loginBox .aboutLogin .loginInfo .leftText ul li .codelogin {
+  display: none;
+}
+
+.loginBox .aboutLogin .loginInfo .leftText ul li .codelogin .phoneNum {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.loginBox .aboutLogin .loginInfo .leftText ul li .codelogin .phoneNum .startNum {
+  font-size: 16px;
+  height: 44px;
+  line-height: 44px;
+}
+
+.loginBox .aboutLogin .loginInfo .leftText ul li .codelogin .phoneNum input {
+  font-size: 16px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 44px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #333;
+  border: none;
+  outline: none;
+}
+
+.loginBox .aboutLogin .loginInfo .leftText ul li .codelogin .phoneCode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.loginBox .aboutLogin .loginInfo .leftText ul li .codelogin .phoneCode input {
+  font-size: 16px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 44px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #333;
+  border: none;
+  outline: none;
+}
+
+.loginBox .aboutLogin .loginInfo .leftText ul li .codelogin .phoneCode .getCode {
+  color: #00b38a;
+  font-size: 13px;
+  text-align: center;
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+}
+
+.loginBox .aboutLogin .loginInfo .leftText ul li .passlogin input {
   width: 290px;
   height: 44px;
   font-size: 14px;
@@ -151,13 +208,13 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
-.loginBox .aboutLogin .loginInfo .leftText ul li .usernull, .loginBox .aboutLogin .loginInfo .leftText ul li .passnull {
+.loginBox .aboutLogin .loginInfo .leftText ul li .passlogin .usernull, .loginBox .aboutLogin .loginInfo .leftText ul li .passlogin .passnull {
   display: none;
   font-size: 12px;
   color: red;
 }
 
-.loginBox .aboutLogin .loginInfo .leftText ul li .usernull .exclamation, .loginBox .aboutLogin .loginInfo .leftText ul li .passnull .exclamation {
+.loginBox .aboutLogin .loginInfo .leftText ul li .passlogin .usernull .exclamation, .loginBox .aboutLogin .loginInfo .leftText ul li .passlogin .passnull .exclamation {
   color: white;
   background-color: red;
   width: 14px;
@@ -212,7 +269,7 @@
   height: 170px;
   position: relative;
   margin: 30px 0px 10px 70px;
-  background-image: url("../img/wxqrcode.jpg");
+  background-image: url("../images/wxqrcode.jpg");
 }
 
 .loginBox .aboutLogin .loginInfo .leftQrcode span {
@@ -252,7 +309,7 @@
   display: block;
   width: 87px;
   margin-top: 10px;
-  background: url("../img/icon-arrow-right.png") no-repeat right center;
+  background: url("../images/icon-arrow-right.png") no-repeat right center;
 }
 
 .rightBox .register a:hover {
@@ -289,7 +346,7 @@
   color: blue;
 }
 
-@media (max-width: 500px) and (min-width: 360px) {
+@media screen and (max-width: 1024px) {
   html {
     height: 100%;
   }
@@ -304,17 +361,16 @@
     display: block;
     width: 100%;
     height: 100%;
-    font-size: 1.2rem;
   }
   .moblieBox .boxTop {
     margin-bottom: 10%;
   }
   .moblieBox .boxTop h2 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 400;
   }
   .moblieBox .boxTop a {
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: #00b38a;
   }
   .moblieBox .username input {
@@ -327,6 +383,38 @@
     border: 0;
     border-bottom: 1px solid #E8E9EB;
     outline: none;
+  }
+  .moblieBox .phoneNum {
+    display: none;
+    border-bottom: 1px solid #E8E9EB;
+    height: 8%;
+  }
+  .moblieBox .phoneNum input {
+    font-size: 1.2rem;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: #333;
+    border: none;
+    outline: none;
+  }
+  .moblieBox .phoneNum input::-webkit-input-placeholder {
+    color: #E8E9EB;
+  }
+  .moblieBox .protocol {
+    display: none;
+  }
+  .moblieBox .protocol span {
+    color: #999;
+    font-size: .8rem;
+    margin-top: 0.53rem;
+  }
+  .moblieBox .protocol a {
+    font-size: .87rem;
+    color: #333;
   }
   .moblieBox .password {
     margin-bottom: 15%;
@@ -342,149 +430,35 @@
     border-bottom: 1px solid #E8E9EB;
     outline: none;
   }
-  .moblieBox .loginBtn {
-    width: 100%;
-    height: 7%;
-    background-color: #00b38a;
-    text-align: center;
-    border: 0;
-    color: white;
-    margin-bottom: 10%;
-  }
-  .moblieBox .mobileLogin {
-    font-size: 1rem;
-    color: #00b38a;
-  }
-}
-
-@media (max-width: 1024px) and (min-width: 500px) {
-  html {
-    height: 100%;
-  }
-  body {
-    height: 100%;
-    padding: 10% 8%;
-  }
-  .pcBox {
+  .moblieBox .phoneCode {
     display: none;
-  }
-  .moblieBox {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    font-size: 3rem;
-  }
-  .moblieBox .boxTop {
-    margin-bottom: 5%;
-  }
-  .moblieBox .boxTop h2 {
-    font-size: 2.4rem;
-    font-weight: 400;
-  }
-  .moblieBox .boxTop a {
-    font-size: 2rem;
-    color: #00b38a;
-  }
-  .moblieBox .username input {
-    width: 100%;
-    padding: 5% 0;
-    font-size: 2.2rem;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    color: #333;
-    border: 0;
     border-bottom: 1px solid #E8E9EB;
-    outline: none;
-  }
-  .moblieBox .password {
-    margin-bottom: 9%;
-  }
-  .moblieBox .password input {
-    width: 100%;
-    padding: 5% 0;
-    font-size: 2.2rem;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    color: #333;
-    border: 0;
-    border-bottom: 1px solid #E8E9EB;
-    outline: none;
-  }
-  .moblieBox .loginBtn {
-    width: 100%;
+    margin-bottom: 15%;
     height: 8%;
-    background-color: #00b38a;
+    width: 100%;
+  }
+  .moblieBox .phoneCode .getCode {
+    color: #00b38a;
+    font-size: .83rem;
     text-align: center;
-    border: 0;
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 5%;
-  }
-  .moblieBox .mobileLogin {
-    font-size: 0.4rem;
-    color: #00b38a;
-    font-size: 1.7rem;
-  }
-}
-
-@media (max-width: 360px) {
-  html {
+    line-height: 4rem;
     height: 100%;
+    display: inline-block;
   }
-  body {
-    height: 100%;
-    padding: 25% 8%;
-  }
-  .pcBox {
-    display: none;
-  }
-  .moblieBox {
-    display: block;
-    width: 100%;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    font-size: 2rem;
-  }
-  .moblieBox .boxTop {
-    margin-bottom: 10%;
-  }
-  .moblieBox .boxTop h2 {
+  .moblieBox .phoneCode input {
     font-size: 1.2rem;
-    font-weight: 400;
-  }
-  .moblieBox .boxTop a {
-    font-size: .8rem;
-    color: #00b38a;
-    margin-top: 0.1rem;
-  }
-  .moblieBox .username input {
-    width: 100%;
-    padding: 5% 0;
-    font-size: 1rem;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    height: 100%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     color: #333;
-    border: 0;
-    border-bottom: 1px solid #E8E9EB;
+    border: none;
     outline: none;
   }
-  .moblieBox .password {
-    margin-bottom: 16%;
-  }
-  .moblieBox .password input {
-    width: 100%;
-    padding: 5% 0;
-    font-size: 1rem;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    color: #333;
-    border: 0;
-    border-bottom: 1px solid #E8E9EB;
-    outline: none;
+  .moblieBox .phoneCode input::-webkit-input-placeholder {
+    color: #E8E9EB;
   }
   .moblieBox .loginBtn {
     width: 100%;
@@ -492,12 +466,13 @@
     background-color: #00b38a;
     text-align: center;
     border: 0;
-    color: white;
     border-radius: 3px;
-    font-size: 1rem;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 10%;
   }
   .moblieBox .mobileLogin {
-    font-size: .8rem;
+    font-size: 1rem;
     color: #00b38a;
   }
 }

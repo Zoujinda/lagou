@@ -1,0 +1,84 @@
+{
+  "code": 200,
+  "msg": "ok",
+  "name": "oper",
+  "imgdata": [{
+      "key": "baidu",
+      "images": "./images/company/meituan1.png",
+      "width": "115px",
+      "height": "70px"
+    },
+    {
+      "key": "meituan",
+      "images": "./images/company/wangyi1.png",
+      "width": "115px",
+      "height": "70px"
+    },
+    {
+      "key": "wangyi",
+      "images": "./images/company/wangyi1.png",
+      "width": "115px",
+      "height": "70px"
+    },
+    {
+      "key": "xindongfang",
+      "images": "./images/company/youqu.png",
+      "width": "115px",
+      "height": "70px"
+    },
+    {
+      "key": "haoweilai",
+      "images": "./images/company/meituan1.png",
+      "width": "156px",
+      "height": "120px"
+    },
+    {
+      "key": "beike",
+      "images": "./images/company/baidu1.png",
+      "width": "156px",
+      "height": "120px"
+    },
+    {
+      "key": "zhaoshang",
+      "images": "./images/company/baidu1.png",
+      "width": "156px",
+      "height": "120px"
+    },
+    {
+      "key": "youqu",
+      "images": "./images/company/bilibili.png",
+      "width": "239px",
+      "height": "97px"
+    },
+    {
+      "key": "bilibili",
+      "images": "./images/company/zhaoshang.png",
+      "width": "115px",
+      "height": "97px"
+    },
+    {
+      "key": "didi",
+      "images": "./images/company/youqu.png",
+      "width": "115px",
+      "height": "97px"
+    },
+    {
+      "key": "jinshanyun",
+      "images": "./images/company/jinshanyun.png",
+      "width": "239px",
+      "height": "97px"
+    },
+    {
+      "key": "mayi",
+      "images": "./images/company/youqu.png",
+      "width": "115px",
+      "height": "97px"
+    },
+    {
+      "key": "jingdong",
+      "images": "./images/company/bilibili.png",
+      "width": "115px",
+      "height": "97px"
+    }
+  ]
+}

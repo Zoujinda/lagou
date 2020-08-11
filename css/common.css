@@ -1,12 +1,52 @@
-*{margin: 0; padding: 0;}
-ul,ol{list-style: none;}
-img{display: block;}
-a{text-decoration: none; color: blue;}
-h1,h2,h3{font-size: 16px;}
-body{font-family: Arial, Helvetica, sans-serif;}
+* {
+  margin: 0;
+  padding: 0;
+}
 
-.lf{float: left;}
-.rf{float: right;}
-.clear:after{content: ''; display: block; clear: both;}
-.container{width: 1203px;margin: 0 auto; position: relative;}
-.container-fluid{width: 100%;}
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.lf {
+  float: left;
+}
+
+.rf {
+  float: right;
+}
+
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.container {
+  width: 1203px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.container-fluid {
+  width: 100%;
+}

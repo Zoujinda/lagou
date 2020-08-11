@@ -164,6 +164,7 @@
 #centerBox .loginBtn {
   width: 100%;
   height: 3rem;
+  font-size: .4rem;
 }
 
 #centerBox .loginBtn button {

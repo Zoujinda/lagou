@@ -116,7 +116,7 @@
   width: 572px;
   height: 120px;
   position: relative;
-  background-image: url("../img/logo.png");
+  background-image: url("../images/logo.png");
   background-repeat: no-repeat;
   background-size: 230px 100%;
 }
@@ -127,7 +127,7 @@
   left: 239px;
   width: 331px;
   height: 34px;
-  background-image: url("../img/header_text.png");
+  background-image: url("../images/header_text.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
